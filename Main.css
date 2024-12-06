@@ -1,0 +1,457 @@
+/* Smooth scrolling and hidden setup */
+html{
+    scroll-behavior: smooth;
+}
+
+.scrolling-element {
+    transform: translate3d(0, 0, 0);
+    will-change: transform;
+  }
+
+  :root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --text-color: #333;
+    --background-color: #f4f4f4;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body::-webkit-scrollbar, body::-webkit-scrollbar-corner{
+    display: none;
+}
+
+body, html {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+/* Header and Navigation Improvements */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    transition: background-color 0.3s ease;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    max-width: 1300px;
+    margin: auto;
+}
+
+.nav-link {
+    font-family: 'Merienda', sans-serif; /* Font style for nav links */
+    color: #000000; /* Default text color */
+    text-decoration: none; /* Remove underline from links */
+    margin: 0 15px; /* Margin between nav links */
+    transition: color 0.3s ease; /* Transition effect for color change */
+    font-size: 1.15em
+}
+
+.nav-link:hover {
+    color: #e2b15e; /* Color when hovering over the link */
+}
+
+.nav-link.active {
+    color: #e2b15e; /* Color for the active link */
+    font-weight: bold; /* Bold text for the active link */
+    border-bottom: 2px solid #e2b15e; /* Optional underline for active link */
+}
+
+.logo a {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    
+}
+
+.menu a {
+    color: #d1a36b;
+    text-decoration: none;
+    margin-left: 1.5rem;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s ease;
+    font-family: 'Merienda';
+    font-size: larger;
+}
+
+.menu a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+/* Hero Section Improvements */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.background-video {
+    display: flex;
+    position: relative; 
+    min-width: 25%;
+    min-height: 25%;
+    width: 85%;
+    height: 85%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .menu-icon {
+        display: block;
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: rgba(0,0,0,0.9);
+        padding: 1rem;
+    }
+
+    .menu-toggle:checked ~ .menu {
+        display: flex;
+    }
+}
+
+/* Zoom and Overlay Styles */
+.keyplan {
+    position: relative;
+    overflow: hidden;
+}
+
+.keyplan img {
+    display: flex;
+    height: 75%;
+    width: 75%;
+    height: auto;
+    align-self: center;
+    justify-self: center;
+}
+
+
+/*Layout section css*/
+.layout-plan {
+    padding: 50px 0;
+    background-color: #f4f4f4; /* Light background for contrast */
+}
+
+.layout-container {
+    margin: 0 auto; /* Center the container */
+    text-align: center; /* Center text within the container */
+}
+
+.layout-selector {  
+    align-items: center; /* Center align items vertically */
+    justify-content: center; /* Center align items horizontally */
+    margin-bottom: 50px; /* Space below the button group */
+}
+
+.layout-btn {
+    margin: 0 10px; /* Space between buttons */
+    padding: 12px 24px; /* Padding for better button appearance */
+    background-color: transparent; /* No background color */
+    border: 2px solid transparent; /* Transparent border for consistent size */
+    color: white; /* Default text color */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: all 0.3s ease; /* Smooth transition for all properties */
+    font-size: 18px; /* Font size */
+    font-family: 'Luxurious Roman'; /* Font family */
+    min-width: 120px; /* Set a minimum width to prevent layout shift */
+    text-align: center; /* Center text within the button */
+    border-radius: 5px; /* Rounded corners for buttons */
+}
+
+.layout-btn:hover {
+    color: gold; /* Change text color to gold on hover */
+    border-color: gold; /* Change border color on hover */
+}
+
+.layout-btn.lactive {
+    color: gold; /* Change text color to gold when active */
+    text-decoration: underline; /* Underline active button */
+    border-color: gold; /* Highlight active button with a border */
+    background-color: rgba(255, 215, 0, 0.1); /* Light background for active button */
+}
+
+.layout-display {
+    position: relative;
+    height: auto; /* Set a fixed height for the display area */
+    overflow: hidden; /* Hide overflow to maintain layout */
+}
+
+.layout-image {
+    display: none; /* Hide all images by default */
+    opacity: 0; /* Start with opacity 0 */
+    transition: opacity 0.5s ease; /* Smooth fade in/out */
+}
+
+.layout-image.lactive {
+    display: flex;
+    opacity: 1; /* Fade in the active image */
+    align-items: center;
+    justify-content: center;
+}
+
+.layout-image img {
+    padding-top: 20px   ;
+    max-width: 75%; /* Ensure images are responsive */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Cover the display area */
+}
+
+.layout-details {
+    margin-top: 20px; /* Space above the details section */
+    font-size: 16px; /* Font size for details */
+    color: #555; /* Darker color for better readability */
+}
+
+/*Facilities*/
+.facilities-container {
+    position: relative;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+.facilities-content {
+    display: flex;
+    gap: 30px;
+}
+
+.facilities-descriptions {
+    flex: 1;
+    max-width: 25%;
+}
+
+.facility-description {
+    cursor: pointer;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 10px;
+    transition: all 0.3s ease;
+    font-family: 'Luxurious Roman';
+    font-size: 1.15em;
+}
+
+.facility-description h3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.25em;
+    color: #333;
+    font-family: 'Merienda';
+}
+
+.description-content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+.facility-description.active .description-content {
+    max-height: 500px;
+    opacity: 1;
+    margin-top: 15px;
+}
+
+.facilities-image {
+    flex: 2;
+    overflow: hidden;
+}
+
+.facilities-image img {
+    position: relative;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: opacity 0.5s ease;
+}
+
+.facilities-image img.hidden {
+    opacity: 0;
+}
+
+/*location css*/
+.location-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+.location-content {
+    display: flex;
+    gap: 30px;
+}
+
+.location-descriptions {
+    flex: 1;
+    max-width: 45%;
+}
+
+.location-description {
+    cursor: pointer;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 10px;
+    transition: all 0.3s ease;
+    font-family: 'Luxurious Roman';
+    font-size: 1.15em;
+}
+
+.location-description h3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.25em;
+    color: #333;
+    font-family: 'Merienda';
+}
+
+.description-content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+.location-description.active .description-content {
+    max-height: 500px;
+    opacity: 1;
+    margin-top: 15px;
+}
+
+.location-image {
+    flex: 2;
+    overflow: hidden;
+    max-width: 50%;
+}
+
+.location-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Gallery */
+.gallery-container {
+    display: flex;
+    position: relative;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.gallery-image {
+    width: 100%;
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 18px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    padding: 10px;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+ /* Lightbox Styles */
+ #lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    text-align: center;
+}
+
+#lightbox-img {
+    max-width: 90%;
+    max-height: 90%;
+    margin: auto;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#lightbox-close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.lightbox-trigger {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
