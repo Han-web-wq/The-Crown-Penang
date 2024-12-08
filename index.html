@@ -49,8 +49,137 @@ function smoothScrollTo(element) {
         <video class="background-video" autoplay muted loop src="Crown Penang teaser video_1080p.mp4">
     </section>
 
+    <section style="max-width: auto; padding-bottom: 50px; display: flex; justify-content: center; align-items: center;">
+        <div style="text-align: center;">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63549.3044452175!2d100.26197048639767!3d5.442534915928897!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304ac30051f5f1e5%3A0x2b75d6bc53cf9f29!2sCrown%20Penang!5e0!3m2!1szh-CN!2smy!4v1733677843506!5m2!1szh-CN!2smy" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
 
-    <section class="features" style="padding: 200px 0; background-color: #f4f4f4;" id="features">
+    <section class="Location" style="padding-bottom: 50px;" id="location">
+        <div class="location" style="padding-top: 25px;">
+            <div class="location-content" style="display: flex; justify-content: space-between;">
+                <div class="location-image" style="flex: 1;">
+                    <img src="map.png" alt="location Image" class="active-location-image" style="padding-left: 100px;">
+                </div>
+                <div class="location-descriptions" style="flex: 1;">
+                    <h2 style="font-family: 'Merienda'; padding-bottom: 30px; color: #d1a36b;">Near by Amenities</h2>
+                    <div class="location-description" data-facility="Health-center">
+                        <h3>Health-center</h3>
+                        <div class="description-content">
+                            <ol>
+                                <li>Osel Clinic, Straits Quay (330M)</li>
+                                <li>Medivron Tanjung Tokong Clinic (360M)</li>
+                                <li>Mount Miriam Cancer Hospital (1.1KM)</li>
+                                <li>Penang Adventist Hospital (2.6KM)</li>
+                                <li>Gleneagles Hospital Penang (3.3KM)</li>
+                                <li>Island Hospital Penang (3.7KM)</li>
+                                <li>Loh Guan Lye Specialists Centre (3.7KM)</li>
+                            </ol>
+                        </div>
+                    </div>
+    
+                    <div class="location-description" data-facility="Education">
+                        <h3>Education</h3>
+                        <div class="description-content">
+                            <ol>
+                                <li>The One Academy Penang (370M)</li>
+                                <li>Stonyhurst International School (400M)</li>
+                                <li>SK Tanjung Tokong (500M)</li>
+                                <li>D’Monte Children & Development (1KM)</li>
+                                <li>Phor Tay Private High School (2KM)</li>
+                                <li>Penang Chinese Girls’ High School (2.5KM)</li>
+                                <li>Pelita International School (2.5KM)</li>
+                                <li>Dalat International School (2.6KM)</li>
+                            </ol>
+                        </div>
+                    </div>
+    
+                    <div class="location-description" data-facility="Park&sports">
+                        <h3>Park & Sports</h3>
+                        <div class="description-content">
+                            <ol>
+                                <li>Seri Tanjung Pinang Promenade (400M)</li>
+                                <li>Straits Quay (500M)</li>
+                                <li>Straits Green Park (580M)</li>
+                                <li>Gurney Bay (2.6KM)</li>
+                                <li>Penang Botanical Gardens (3KM)</li>
+                                <li>Penang Youth Park (3.6KM)</li>
+                            </ol>
+                        </div>
+                    </div>
+    
+                    <div class="location-description" data-facility="Connectivity">
+                        <h3>Connectivity</h3>
+                        <div class="description-content">
+                            <ol>
+                                <li>Penang Outer Ring Road</li>
+                            </ol>
+                        </div>
+                    </div>
+    
+                    <div class="location-description" data-facility="Shopping">
+                        <h3>Shopping</h3>
+                        <div class="description-content">
+                            <ol>
+                                <li>Straits Quay Marina Mall (370M)</li>
+                                <li>Lotus’s Tanjung Pinang (450M)</li>
+                                <li>Island 88 Mall (800M)</li>
+                                <li>City Junction Penang (900M)</li>
+                                <li>Gurney Plaza (2KM)</li>
+                                <li>Gurney Paragon (2KM)</li>
+                            </ol>
+                        </div>
+                    </div>
+    
+                    <div class="location-description" data-facility="Tourism Spot">
+                        <h3>Penang Tourism Spot</h3>
+                        <div class="description-content">
+                            <ol>
+                                <li>George Town (5KM)</li>
+                                <li>UNESCO World Heritage Site (5.2KM)</li>
+                                <li>Batu Ferringhi (7KM)</li>
+                                <li>Escape Park (11KM)</li>
+                                <li>Entopia (11KM)</li>
+                            </ol>
+                        </div>
+                    </div>
+    
+                    <div class="location-description" data-facility="Dining%cafes">
+                        <h3>Dining & Cafes</h3>
+                        <div class="description-content">
+                            <ol>
+                                <li>Precinct 10 (900M)</li>
+                                <li>Viva Local Food Haven (1KM)</li>
+                                <li>Gurney Drive Hawkers (1.7KM)</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const locationDescriptions = document.querySelectorAll('.location-description');
+            
+                locationDescriptions.forEach(description => {
+                    description.addEventListener('click', () => {
+                        // Close all other descriptions
+                        locationDescriptions.forEach(desc => {
+                            if (desc !== description) {
+                                desc.classList.remove('active');
+                            }
+                        });
+            
+                        // Toggle clicked description
+                        description.classList.toggle('active');
+                    });
+                });
+            });
+        </script>
+    </section>
+
+    <section class="features" style=" background-color: #f4f4f4;" id="features">
         <div class="features-container" style="position: relative;; margin: 0 auto; text-align: center; align-items: center; justify-content: center;">
             <h2 style="font-family: 'Merienda'; color: #d1a36b; margin-bottom: 40px;">Features</h2>
             <div class="features-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px;">
@@ -243,129 +372,7 @@ function smoothScrollTo(element) {
     </script>
 </section>
 
-<section class="Location" style="padding-bottom: 50px;" id="location">
-    <div class="location" style="padding-top: 50px;">
-        <div class="location-content" style="display: flex; justify-content: space-between;">
-            <div class="location-image" style="flex: 1;">
-                <img src="map.png" alt="location Image" class="active-location-image" style="padding-left: 100px;">
-            </div>
-            <div class="location-descriptions" style="flex: 1;">
-                <h2 style="font-family: 'Merienda'; padding-bottom: 30px; color: #d1a36b;">Near by Amenities</h2>
-                <div class="location-description" data-facility="Health-center">
-                    <h3>Health-center</h3>
-                    <div class="description-content">
-                        <ol>
-                            <li>Osel Clinic, Straits Quay (330M)</li>
-                            <li>Medivron Tanjung Tokong Clinic (360M)</li>
-                            <li>Mount Miriam Cancer Hospital (1.1KM)</li>
-                            <li>Penang Adventist Hospital (2.6KM)</li>
-                            <li>Gleneagles Hospital Penang (3.3KM)</li>
-                            <li>Island Hospital Penang (3.7KM)</li>
-                            <li>Loh Guan Lye Specialists Centre (3.7KM)</li>
-                        </ol>
-                    </div>
-                </div>
 
-                <div class="location-description" data-facility="Education">
-                    <h3>Education</h3>
-                    <div class="description-content">
-                        <ol>
-                            <li>The One Academy Penang (370M)</li>
-                            <li>Stonyhurst International School (400M)</li>
-                            <li>SK Tanjung Tokong (500M)</li>
-                            <li>D’Monte Children & Development (1KM)</li>
-                            <li>Phor Tay Private High School (2KM)</li>
-                            <li>Penang Chinese Girls’ High School (2.5KM)</li>
-                            <li>Pelita International School (2.5KM)</li>
-                            <li>Dalat International School (2.6KM)</li>
-                        </ol>
-                    </div>
-                </div>
-
-                <div class="location-description" data-facility="Park&sports">
-                    <h3>Park & Sports</h3>
-                    <div class="description-content">
-                        <ol>
-                            <li>Seri Tanjung Pinang Promenade (400M)</li>
-                            <li>Straits Quay (500M)</li>
-                            <li>Straits Green Park (580M)</li>
-                            <li>Gurney Bay (2.6KM)</li>
-                            <li>Penang Botanical Gardens (3KM)</li>
-                            <li>Penang Youth Park (3.6KM)</li>
-                        </ol>
-                    </div>
-                </div>
-
-                <div class="location-description" data-facility="Connectivity">
-                    <h3>Connectivity</h3>
-                    <div class="description-content">
-                        <ol>
-                            <li>Penang Outer Ring Road</li>
-                        </ol>
-                    </div>
-                </div>
-
-                <div class="location-description" data-facility="Shopping">
-                    <h3>Shopping</h3>
-                    <div class="description-content">
-                        <ol>
-                            <li>Straits Quay Marina Mall (370M)</li>
-                            <li>Lotus’s Tanjung Pinang (450M)</li>
-                            <li>Island 88 Mall (800M)</li>
-                            <li>City Junction Penang (900M)</li>
-                            <li>Gurney Plaza (2KM)</li>
-                            <li>Gurney Paragon (2KM)</li>
-                        </ol>
-                    </div>
-                </div>
-
-                <div class="location-description" data-facility="Tourism Spot">
-                    <h3>Penang Tourism Spot</h3>
-                    <div class="description-content">
-                        <ol>
-                            <li>George Town (5KM)</li>
-                            <li>UNESCO World Heritage Site (5.2KM)</li>
-                            <li>Batu Ferringhi (7KM)</li>
-                            <li>Escape Park (11KM)</li>
-                            <li>Entopia (11KM)</li>
-                        </ol>
-                    </div>
-                </div>
-
-                <div class="location-description" data-facility="Dining%cafes">
-                    <h3>Dining & Cafes</h3>
-                    <div class="description-content">
-                        <ol>
-                            <li>Precinct 10 (900M)</li>
-                            <li>Viva Local Food Haven (1KM)</li>
-                            <li>Gurney Drive Hawkers (1.7KM)</li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const locationDescriptions = document.querySelectorAll('.location-description');
-        
-            locationDescriptions.forEach(description => {
-                description.addEventListener('click', () => {
-                    // Close all other descriptions
-                    locationDescriptions.forEach(desc => {
-                        if (desc !== description) {
-                            desc.classList.remove('active');
-                        }
-                    });
-        
-                    // Toggle clicked description
-                    description.classList.toggle('active');
-                });
-            });
-        });
-    </script>
-</section>
 
 <section class="gallery" style="padding-bottom: 100px;" id="gallery">
     <div class="gallery-container">
@@ -481,8 +488,9 @@ function smoothScrollTo(element) {
     text-align: center;
     font-family: 'Mooli', sans-serif;
 ">
-    <img src="logo.png" style="width: 10%; height: 10%;">
-    <h2 style="font-family: Merienda; color: white; padding: 10px;">The Crown Penang</h3>
+    <img src="blacklogo.png" style="width: 10%; height: 10%;">
+    <h2 style="font-family: Merienda; color: white; padding: 5px;">The Crown Penang</h3>
+    <h3 style="font-family: Merienda; color: white; padding: 10px;">Contact us for more information & E-Brochure</h3>
     <div class="footer-container" style="max-width: 600px; margin: 0 auto;">
         <a href="https://wa.me/+60164771238" target="_blank" style="
             display: inline-block;
