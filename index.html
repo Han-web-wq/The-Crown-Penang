@@ -1,171 +1,351 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Crown Penang</title>
-    <link rel="stylesheet" href="Main.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Luxurious+Roman&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap" rel="stylesheet">
-</head>
-<body>
-    <header>
-        <nav>
-            <div class="logo">
-                <a href="index.html" style="font-family: 'Merienda'; color: #e2b15e;">The Crown Penang</a>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>The Crown Penang</title>
+        <link rel="stylesheet" href="Main.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Luxurious+Roman&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div class="logo">
+                    <a href="index.html" style="font-family: 'Merienda'; color: #e2b15e;">The Crown Penang</a>
+                </div>
+                <a href="#features" class="nav-link" style="color: #e2b15e;">Features</a>
+                <a href="#layout-plan" class="nav-link" style="color: #e2b15e;">Layout Plan</a>
+                <a href="#facilities" class="nav-link" style="color: #e2b15e;">Facilities</a>
+                <a href="#location" class="nav-link" style="color: #e2b15e;">Location</a>
+                <a href="#gallery" class="nav-link"style="color: #e2b15e;" >Gallery</a>
+            </nav>
+            <script>
+                document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', event => {
+        event.preventDefault();
+        const targetId = link.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        smoothScrollTo(targetElement);
+    });
+    });
+
+    // Smooth scrolling function
+    function smoothScrollTo(element) {
+    const offset = element.offsetTop;
+    window.scrollTo({
+        top: offset,
+        behavior: 'smooth'
+    });
+    }
+            </script>
+        </header>
+
+        <section id="home" class="hero" style="position: relative;">
+            <video class="background-video" autoplay muted loop src="Crown Penang teaser video_1080p.mp4">
+        </section>
+
+        <section style="max-width: auto; padding-bottom: 50px; display: flex; justify-content: center; align-items: center;">
+            <div style="text-align: center;">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63549.3044452175!2d100.26197048639767!3d5.442534915928897!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304ac30051f5f1e5%3A0x2b75d6bc53cf9f29!2sCrown%20Penang!5e0!3m2!1szh-CN!2smy!4v1733677843506!5m2!1szh-CN!2smy" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
-            <a href="#features" class="nav-link" style="color: #e2b15e;">Features</a>
-            <a href="#layout-plan" class="nav-link" style="color: #e2b15e;">Layout Plan</a>
-            <a href="#facilities" class="nav-link" style="color: #e2b15e;">Facilities</a>
-            <a href="#location" class="nav-link" style="color: #e2b15e;">Location</a>
-            <a href="#gallery" class="nav-link"style="color: #e2b15e;" >Gallery</a>
-        </nav>
-        <script>
-            document.querySelectorAll('.nav-link').forEach(link => {
-  link.addEventListener('click', event => {
-    event.preventDefault();
-    const targetId = link.getAttribute('href');
-    const targetElement = document.querySelector(targetId);
-    smoothScrollTo(targetElement);
-  });
-});
+        </section>
 
-// Smooth scrolling function
-function smoothScrollTo(element) {
-  const offset = element.offsetTop;
-  window.scrollTo({
-    top: offset,
-    behavior: 'smooth'
-  });
-}
-        </script>
-    </header>
+        <section class="Location" style="padding-bottom: 50px;" id="location">
+            <div class="location" style="padding-top: 25px;">
+                <div class="location-content" style="display: flex; justify-content: space-between;">
+                    <div class="location-image" style="flex: 1;">
+                        <img src="map.png" alt="location Image" class="active-location-image" style="padding-left: 100px;">
+                    </div>
+                    <div class="location-descriptions" style="flex: 1;">
+                        <h2 style="font-family: 'Merienda'; padding-bottom: 30px; color: #d1a36b;">Near by Amenities</h2>
+                        <div class="location-description" data-facility="Health-center">
+                            <h3>Health-center</h3>
+                            <div class="description-content">
+                                <ol>
+                                    <li>Osel Clinic, Straits Quay (330M)</li>
+                                    <li>Medivron Tanjung Tokong Clinic (360M)</li>
+                                    <li>Mount Miriam Cancer Hospital (1.1KM)</li>
+                                    <li>Penang Adventist Hospital (2.6KM)</li>
+                                    <li>Gleneagles Hospital Penang (3.3KM)</li>
+                                    <li>Island Hospital Penang (3.7KM)</li>
+                                    <li>Loh Guan Lye Specialists Centre (3.7KM)</li>
+                                </ol>
+                            </div>
+                        </div>
+        
+                        <div class="location-description" data-facility="Education">
+                            <h3>Education</h3>
+                            <div class="description-content">
+                                <ol>
+                                    <li>The One Academy Penang (370M)</li>
+                                    <li>Stonyhurst International School (400M)</li>
+                                    <li>SK Tanjung Tokong (500M)</li>
+                                    <li>D’Monte Children & Development (1KM)</li>
+                                    <li>Phor Tay Private High School (2KM)</li>
+                                    <li>Penang Chinese Girls’ High School (2.5KM)</li>
+                                    <li>Pelita International School (2.5KM)</li>
+                                    <li>Dalat International School (2.6KM)</li>
+                                </ol>
+                            </div>
+                        </div>
+        
+                        <div class="location-description" data-facility="Park&sports">
+                            <h3>Park & Sports</h3>
+                            <div class="description-content">
+                                <ol>
+                                    <li>Seri Tanjung Pinang Promenade (400M)</li>
+                                    <li>Straits Quay (500M)</li>
+                                    <li>Straits Green Park (580M)</li>
+                                    <li>Gurney Bay (2.6KM)</li>
+                                    <li>Penang Botanical Gardens (3KM)</li>
+                                    <li>Penang Youth Park (3.6KM)</li>
+                                </ol>
+                            </div>
+                        </div>
+        
+                        <div class="location-description" data-facility="Connectivity">
+                            <h3>Connectivity</h3>
+                            <div class="description-content">
+                                <ol>
+                                    <li>Penang Outer Ring Road</li>
+                                </ol>
+                            </div>
+                        </div>
+        
+                        <div class="location-description" data-facility="Shopping">
+                            <h3>Shopping</h3>
+                            <div class="description-content">
+                                <ol>
+                                    <li>Straits Quay Marina Mall (370M)</li>
+                                    <li>Lotus’s Tanjung Pinang (450M)</li>
+                                    <li>Island 88 Mall (800M)</li>
+                                    <li>City Junction Penang (900M)</li>
+                                    <li>Gurney Plaza (2KM)</li>
+                                    <li>Gurney Paragon (2KM)</li>
+                                </ol>
+                            </div>
+                        </div>
+        
+                        <div class="location-description" data-facility="Tourism Spot">
+                            <h3>Penang Tourism Spot</h3>
+                            <div class="description-content">
+                                <ol>
+                                    <li>George Town (5KM)</li>
+                                    <li>UNESCO World Heritage Site (5.2KM)</li>
+                                    <li>Batu Ferringhi (7KM)</li>
+                                    <li>Escape Park (11KM)</li>
+                                    <li>Entopia (11KM)</li>
+                                </ol>
+                            </div>
+                        </div>
+        
+                        <div class="location-description" data-facility="Dining%cafes">
+                            <h3>Dining & Cafes</h3>
+                            <div class="description-content">
+                                <ol>
+                                    <li>Precinct 10 (900M)</li>
+                                    <li>Viva Local Food Haven (1KM)</li>
+                                    <li>Gurney Drive Hawkers (1.7KM)</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    const locationDescriptions = document.querySelectorAll('.location-description');
+                
+                    locationDescriptions.forEach(description => {
+                        description.addEventListener('click', () => {
+                            // Close all other descriptions
+                            locationDescriptions.forEach(desc => {
+                                if (desc !== description) {
+                                    desc.classList.remove('active');
+                                }
+                            });
+                
+                            // Toggle clicked description
+                            description.classList.toggle('active');
+                        });
+                    });
+                });
+            </script>
+        </section>
 
-    <section id="home" class="hero" style="position: relative;">
-        <video class="background-video" autoplay muted loop src="Crown Penang teaser video_1080p.mp4">
-    </section>
+        <section class="features" style=" background-color: #f4f4f4;" id="features">
+            <div class="features-container" style="position: relative;; margin: 0 auto; text-align: center; align-items: center; justify-content: center;">
+                <h2 style="font-family: 'Merienda'; color: #d1a36b; margin-bottom: 40px;">Features</h2>
+                <div class="features-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px;">
+                    <div class="feature-item" style="background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                        <img src="house_100dp_D1A36B_FILL0_wght400_GRAD0_opsz48.png" style="width: 60px;">
+                        <h3 style="font-family: 'Merienda'; color: #d1a36b;">Freehold</h3>
+                    </div>
+                    <div class="feature-item" style="background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                        <img src="home_pin_100dp_D1A36B_FILL0_wght400_GRAD0_opsz48.png" style="width: 60px;">
+                        <h3 style="font-family: 'Merienda'; color: #d1a36b;">Strategic Location</h3>
+                    </div>
+                    <div class="feature-item" style="background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                        <img src="flyover_100dp_D1A36B_FILL0_wght400_GRAD0_opsz48.png" style="width: 60px;">
+                        <h3 style="font-family: 'Merienda'; color: #d1a36b;">Direct Access to Penang Outer Road</h3>
+                    </div>
+                    <div class="feature-item" style="background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                        <img src="table_restaurant_100dp_D1A36B_FILL0_wght400_GRAD0_opsz48.png" style="width: 60px;">
+                        <h3 style="font-family: 'Merienda'; color: #d1a36b;">Sky Facilities at Floor 38 & 40</h3>
+                    </div>
+                    <div class="feature-item" style="background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                        <img src="table_restaurant_100dp_D1A36B_FILL0_wght400_GRAD0_opsz48.png" style="width: 60px;">
+                        <h3 style="font-family: 'Merienda'; color: #d1a36b;">Short Term Rental Accommodation is Permissable</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <section style="max-width: auto; padding-bottom: 50px; display: flex; justify-content: center; align-items: center;">
-        <div style="text-align: center;">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63549.3044452175!2d100.26197048639767!3d5.442534915928897!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304ac30051f5f1e5%3A0x2b75d6bc53cf9f29!2sCrown%20Penang!5e0!3m2!1szh-CN!2smy!4v1733677843506!5m2!1szh-CN!2smy" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <section style="max-width: auto; margin: auto; padding-bottom: 150px;">
+        <div class="keyplan">
+            <img src="TheCrown_Sales_Kit_page-0015.jpg" class="floorplan">
         </div>
     </section>
 
-    <section class="Location" style="padding-bottom: 50px;" id="location">
-        <div class="location" style="padding-top: 25px;">
-            <div class="location-content" style="display: flex; justify-content: space-between;">
-                <div class="location-image" style="flex: 1;">
-                    <img src="map.png" alt="location Image" class="active-location-image" style="padding-left: 100px;">
+    <section class="layout_plan" id="layout-plan" style="background-color: black; padding-bottom: 150px;">
+        <div class="layout-container" style="padding-top: 50px;">
+            <h2 style="font-family: Merienda; color: white; font-size: 1.8em;">Apartment Layout Plans</h2>
+            <div class="layout-selector;">
+                <button class="layout-btn lactive" data-layout="typeA">Type A</button>
+                <button class="layout-btn" data-layout="typeB">Type B</button>
+                <button class="layout-btn" data-layout="typeCL">Type C (L)</button>
+                <button class="layout-btn" data-layout="typeC1">Type C1</button>
+                <button class="layout-btn" data-layout="typeD">Type D</button>
+            </div>
+            <div class="layout-display">
+                <div class="layout-image lactive" id="typeA">
+                    <img src="TheCrown_Sales_Kit_page-0016.jpg" alt="Type A Layout">
                 </div>
-                <div class="location-descriptions" style="flex: 1;">
-                    <h2 style="font-family: 'Merienda'; padding-bottom: 30px; color: #d1a36b;">Near by Amenities</h2>
-                    <div class="location-description" data-facility="Health-center">
-                        <h3>Health-center</h3>
-                        <div class="description-content">
-                            <ol>
-                                <li>Osel Clinic, Straits Quay (330M)</li>
-                                <li>Medivron Tanjung Tokong Clinic (360M)</li>
-                                <li>Mount Miriam Cancer Hospital (1.1KM)</li>
-                                <li>Penang Adventist Hospital (2.6KM)</li>
-                                <li>Gleneagles Hospital Penang (3.3KM)</li>
-                                <li>Island Hospital Penang (3.7KM)</li>
-                                <li>Loh Guan Lye Specialists Centre (3.7KM)</li>
-                            </ol>
-                        </div>
-                    </div>
-    
-                    <div class="location-description" data-facility="Education">
-                        <h3>Education</h3>
-                        <div class="description-content">
-                            <ol>
-                                <li>The One Academy Penang (370M)</li>
-                                <li>Stonyhurst International School (400M)</li>
-                                <li>SK Tanjung Tokong (500M)</li>
-                                <li>D’Monte Children & Development (1KM)</li>
-                                <li>Phor Tay Private High School (2KM)</li>
-                                <li>Penang Chinese Girls’ High School (2.5KM)</li>
-                                <li>Pelita International School (2.5KM)</li>
-                                <li>Dalat International School (2.6KM)</li>
-                            </ol>
-                        </div>
-                    </div>
-    
-                    <div class="location-description" data-facility="Park&sports">
-                        <h3>Park & Sports</h3>
-                        <div class="description-content">
-                            <ol>
-                                <li>Seri Tanjung Pinang Promenade (400M)</li>
-                                <li>Straits Quay (500M)</li>
-                                <li>Straits Green Park (580M)</li>
-                                <li>Gurney Bay (2.6KM)</li>
-                                <li>Penang Botanical Gardens (3KM)</li>
-                                <li>Penang Youth Park (3.6KM)</li>
-                            </ol>
-                        </div>
-                    </div>
-    
-                    <div class="location-description" data-facility="Connectivity">
-                        <h3>Connectivity</h3>
-                        <div class="description-content">
-                            <ol>
-                                <li>Penang Outer Ring Road</li>
-                            </ol>
-                        </div>
-                    </div>
-    
-                    <div class="location-description" data-facility="Shopping">
-                        <h3>Shopping</h3>
-                        <div class="description-content">
-                            <ol>
-                                <li>Straits Quay Marina Mall (370M)</li>
-                                <li>Lotus’s Tanjung Pinang (450M)</li>
-                                <li>Island 88 Mall (800M)</li>
-                                <li>City Junction Penang (900M)</li>
-                                <li>Gurney Plaza (2KM)</li>
-                                <li>Gurney Paragon (2KM)</li>
-                            </ol>
-                        </div>
-                    </div>
-    
-                    <div class="location-description" data-facility="Tourism Spot">
-                        <h3>Penang Tourism Spot</h3>
-                        <div class="description-content">
-                            <ol>
-                                <li>George Town (5KM)</li>
-                                <li>UNESCO World Heritage Site (5.2KM)</li>
-                                <li>Batu Ferringhi (7KM)</li>
-                                <li>Escape Park (11KM)</li>
-                                <li>Entopia (11KM)</li>
-                            </ol>
-                        </div>
-                    </div>
-    
-                    <div class="location-description" data-facility="Dining%cafes">
-                        <h3>Dining & Cafes</h3>
-                        <div class="description-content">
-                            <ol>
-                                <li>Precinct 10 (900M)</li>
-                                <li>Viva Local Food Haven (1KM)</li>
-                                <li>Gurney Drive Hawkers (1.7KM)</li>
-                            </ol>
-                        </div>
-                    </div>
+                <div class="layout-image" id="typeB">
+                    <img src="TheCrown_Sales_Kit_page-0017.jpg" alt="Type B Layout">
+                </div>
+                <div class="layout-image" id="typeCL">
+                    <img src="TheCrown_Sales_Kit_page-0018.jpg" alt="Type C (L) Layout">
+                </div>
+                <div class="layout-image" id="typeC1">
+                    <img src="TheCrown_Sales_Kit_page-0019.jpg" alt="Type C1 Layout">
+                </div>
+                <div class="layout-image" id="typeD">
+                    <img src="TheCrown_Sales_Kit_page-0020.jpg" alt="Type D Layout">
                 </div>
             </div>
         </div>
-    
+
         <script>
             document.addEventListener('DOMContentLoaded', () => {
-                const locationDescriptions = document.querySelectorAll('.location-description');
+                const layoutButtons = document.querySelectorAll('.layout-btn');
+                const layoutImages = document.querySelectorAll('.layout-image');
+        
+                layoutButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        // Remove active class from all buttons and images
+                        layoutButtons.forEach(btn => {
+                            btn.classList.remove('lactive');
+                        });
+                        layoutImages.forEach(img => {
+                            img.classList.remove('lactive');
+                        });
+        
+                        // Add active class to clicked button and corresponding image
+                        button.classList.add('lactive');
+                        const layoutType = button.dataset.layout;
+                        document.querySelector(`.layout-image#${layoutType}`).classList.add('lactive');
+                    });
+                });
+            });
+        </script>
+    </section>
+        
+    <section class="Facilities" id="facilities"style="padding: 100px;">
+        <div class="facilities-container">
+            <h2 style="font-family: 'Merienda'; color: #e2b15e;">Facilities Plans</h2>
+            <div class="facilities-content" style="display: flex; justify-content: space-between;">
+                <div class="facilities-descriptions" style="flex: 1;">
+                    <div class="facility-description" data-facility="Outdoor-retreat">
+                        <h3>Outdoor Retreat - 8th Floor</h3>
+                        <div class="description-content">
+                            <ol type="1">
+                                <li>1. Terrace Garden</li>
+                                <li>2. Leisure Lawns</li>
+                                <li>3. The Courtyard</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="facility-description" data-facility="Collaborative-spaces">
+                        <h3>Collaborative Spaces - 38th Floor</h3>
+                        <div class="description-content">
+                            <ol type="1">
+                                <li>1. Alfresco Area</li>
+                                <li>2. Oasis Garden</li>
+                                <li>3. Garden Courtyard</li>
+                                <li>4. Canopy Corner</li>
+                                <li>5. Function Room / Co-working Space</li>
+                                <li>6. Female Changing Rooms</li>
+                                <li>7. Male Changing Rooms</li>
+                                <li>8. OKU Toilet</li>
+                                <li>9. Kids Playground</li>
+                                <li>10. Parcourse</li>
+                                <li>11. Running Track</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="facility-description" data-facility="Sky-High-Retreat">
+                        <h3>Sky High Retreat - 40th Floor</h3>
+                        <div class="description-content">
+                            <ol type="1">
+                                <li>1. Wading Pool</li>
+                                <li>2. Sky Pool</li>
+                                <li>3. Sunbed</li>
+                                <li>4. Swimming Deck</li>
+                                <li>5. Sky Lounge</li>
+                                <li>6. OKU Toilet</li>
+                                <li>7. Female Changing Rooms</li>
+                                <li>8. Male Changing Rooms</li>
+                                <li>9. Games Room</li>
+                                <li>10. Gymnasium</li>
+                                <li>11. BBQ Area</li>
+                                <li>12. Garden Walk</li>
+                                <li>13. Event Garden</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="facilities-image" style="flex: 1; padding-left: 20px;">
+                    <img src="outdoor-retreat.jpg" alt="Facility Image" class="active-facility-image">
+                </div>
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const facilityDescriptions = document.querySelectorAll('.facility-description');
+                const facilitiesImage = document.querySelector('.facilities-image img');
             
-                locationDescriptions.forEach(description => {
+                // Facility Images Mapping
+                const facilityImages = {
+                    'Outdoor-retreat': '/outdoor-retreat.jpg',
+                    'Collaborative-spaces': '/collab.png',
+                    'Sky-High-Retreat': '/skyhigh.png'
+                };
+            
+                facilityDescriptions.forEach(description => {
                     description.addEventListener('click', () => {
                         // Close all other descriptions
-                        locationDescriptions.forEach(desc => {
+                        facilityDescriptions.forEach(desc => {
                             if (desc !== description) {
                                 desc.classList.remove('active');
                             }
@@ -173,344 +353,164 @@ function smoothScrollTo(element) {
             
                         // Toggle clicked description
                         description.classList.toggle('active');
+            
+                        // Change image based on facility
+                        const facilityType = description.getAttribute('data-facility');
+                        const newImageSrc = facilityImages[facilityType];
+            
+                        // Fade out current image
+                        facilitiesImage.classList.add('hidden');
+            
+                        // After fade out, change image and fade in
+                        setTimeout(() => {
+                            facilitiesImage.src = newImageSrc;
+                            facilitiesImage.classList.remove('hidden');
+                        }, 500);
                     });
                 });
             });
         </script>
     </section>
 
-    <section class="features" style=" background-color: #f4f4f4;" id="features">
-        <div class="features-container" style="position: relative;; margin: 0 auto; text-align: center; align-items: center; justify-content: center;">
-            <h2 style="font-family: 'Merienda'; color: #d1a36b; margin-bottom: 40px;">Features</h2>
-            <div class="features-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px;">
-                <div class="feature-item" style="background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-                    <img src="house_100dp_D1A36B_FILL0_wght400_GRAD0_opsz48.png" style="width: 60px;">
-                    <h3 style="font-family: 'Merienda'; color: #d1a36b;">Freehold</h3>
-                </div>
-                <div class="feature-item" style="background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-                    <img src="home_pin_100dp_D1A36B_FILL0_wght400_GRAD0_opsz48.png" style="width: 60px;">
-                    <h3 style="font-family: 'Merienda'; color: #d1a36b;">Strategic Location</h3>
-                </div>
-                <div class="feature-item" style="background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-                    <img src="flyover_100dp_D1A36B_FILL0_wght400_GRAD0_opsz48.png" style="width: 60px;">
-                    <h3 style="font-family: 'Merienda'; color: #d1a36b;">Direct Access to Penang Outer Road</h3>
-                </div>
-                <div class="feature-item" style="background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-                    <img src="table_restaurant_100dp_D1A36B_FILL0_wght400_GRAD0_opsz48.png" style="width: 60px;">
-                    <h3 style="font-family: 'Merienda'; color: #d1a36b;">Sky Facilities at Floor 38 & 40</h3>
-                </div>
-                <div class="feature-item" style="background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-                    <img src="table_restaurant_100dp_D1A36B_FILL0_wght400_GRAD0_opsz48.png" style="width: 60px;">
-                    <h3 style="font-family: 'Merienda'; color: #d1a36b;">Short Term Rental Accommodation is Permissable</h3>
-                </div>
-            </div>
+
+
+    <section class="gallery" style="padding-bottom: 100px;" id="gallery">
+        <div class="gallery-container">
+            <img class="gallery-image active" src="TheCrown_Sales_Kit_page-0024.jpg" alt="Image 1">
+            <img class="gallery-image" src="TheCrown_Sales_Kit_page-0025.jpg" alt="Image 2">
+            <img class="gallery-image" src="TheCrown_Sales_Kit_page-0026.jpg" alt="Image 3">
+            <img class="gallery-image" src="TheCrown_Sales_Kit_page-0027.jpg" alt="Image 4">
+            <img class="gallery-image" src="TheCrown_Sales_Kit_page-0028.jpg" alt="Image 5">
+            <img class="gallery-image" src="TheCrown_Sales_Kit_page-0029.jpg" alt="Image 6">
+            <img class="gallery-image" src="TheCrown_Sales_Kit_page-0030.jpg" alt="Image 7">
+            <img class="gallery-image" src="TheCrown_Sales_Kit_page-0031.jpg" alt="Image 8">
+            <img class="gallery-image" src="TheCrown_Sales_Kit_page-0032.jpg" alt="Image 9">
+            <img class="gallery-image" src="TheCrown_Sales_Kit_page-0033.jpg" alt="Image 10">
+            <img class="gallery-image" src="TheCrown_Sales_Kit_page-0034.jpg" alt="Image 11">
+            <img class="gallery-image" src="TheCrown_Sales_Kit_page-0035.jpg" alt="Image 12">
+            <img class="gallery-image" src="TheCrown_Sales_Kit_page-0036.jpg" alt="Image 13">
+            <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+            <button class="next" onclick="changeSlide(1)">&#10095;</button>
         </div>
+
+        <script>
+            let currentIndex = 0;
+            const images = document.querySelectorAll('.gallery-image');
+        
+            function showSlide(index) {
+                images.forEach((img, i) => {
+                    img.classList.remove('active');
+                    if (i === index) {
+                        img.classList.add('active');
+                    }
+                });
+            }
+        
+            function changeSlide(direction) {
+                currentIndex += direction;
+                if (currentIndex < 0) {
+                    currentIndex = images.length - 1;
+                } else if (currentIndex >= images.length) {
+                    currentIndex = 0;
+                }
+                showSlide(currentIndex);
+            }
+        
+            function autoSlide() {
+                currentIndex = (currentIndex + 1) % images.length;
+                showSlide(currentIndex);
+            }
+        
+            setInterval(autoSlide, 3000); // Change image every 3 seconds
+        </script>
+        
     </section>
 
-<section style="max-width: auto; margin: auto; padding-bottom: 150px;">
-    <div class="keyplan">
-        <img src="TheCrown_Sales_Kit_page-0015.jpg" class="floorplan">
-    </div>
-</section>
 
-<section class="layout_plan" id="layout-plan" style="background-color: black; padding-bottom: 150px;">
-    <div class="layout-container" style="padding-top: 50px;">
-        <h2 style="font-family: Merienda; color: white; font-size: 1.8em;">Apartment Layout Plans</h2>
-        <div class="layout-selector;">
-            <button class="layout-btn lactive" data-layout="typeA">Type A</button>
-            <button class="layout-btn" data-layout="typeB">Type B</button>
-            <button class="layout-btn" data-layout="typeCL">Type C (L)</button>
-            <button class="layout-btn" data-layout="typeC1">Type C1</button>
-            <button class="layout-btn" data-layout="typeD">Type D</button>
-        </div>
-        <div class="layout-display">
-            <div class="layout-image lactive" id="typeA">
-                <img src="TheCrown_Sales_Kit_page-0016.jpg" alt="Type A Layout">
-            </div>
-            <div class="layout-image" id="typeB">
-                <img src="TheCrown_Sales_Kit_page-0017.jpg" alt="Type B Layout">
-            </div>
-            <div class="layout-image" id="typeCL">
-                <img src="TheCrown_Sales_Kit_page-0018.jpg" alt="Type C (L) Layout">
-            </div>
-            <div class="layout-image" id="typeC1">
-                <img src="TheCrown_Sales_Kit_page-0019.jpg" alt="Type C1 Layout">
-            </div>
-            <div class="layout-image" id="typeD">
-                <img src="TheCrown_Sales_Kit_page-0020.jpg" alt="Type D Layout">
-            </div>
-        </div>
-    </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const layoutButtons = document.querySelectorAll('.layout-btn');
-            const layoutImages = document.querySelectorAll('.layout-image');
-    
-            layoutButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    // Remove active class from all buttons and images
-                    layoutButtons.forEach(btn => {
-                        btn.classList.remove('lactive');
-                    });
-                    layoutImages.forEach(img => {
-                        img.classList.remove('lactive');
-                    });
-    
-                    // Add active class to clicked button and corresponding image
-                    button.classList.add('lactive');
-                    const layoutType = button.dataset.layout;
-                    document.querySelector(`.layout-image#${layoutType}`).classList.add('lactive');
+        <!-- Lightbox Container -->
+        <div id="lightbox">
+            <span id="lightbox-close">&times;</span>
+            <img id="lightbox-img" src="" alt="Lightbox image">
+        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const lightbox = document.getElementById('lightbox');
+                const lightboxImg = document.getElementById('lightbox-img');
+                const closeLightbox = document.getElementById('lightbox-close');
+
+                // Function to open lightbox
+                function openLightbox(src) {
+                    lightboxImg.src = src;
+                    lightbox.style.display = 'block';
+                }
+
+                // Function to close lightbox
+                function closeLightboxFunc() {
+                    lightbox.style.display = 'none';
+                }
+
+                // Add lightbox functionality to all images
+                const images = document.querySelectorAll('img');
+                images.forEach(img => {
+                    // Skip images inside lightbox and menu icon
+                    if (img.id !== 'lightbox-img' && !img.closest('#menu-icon')) {
+                        img.classList.add('lightbox-trigger');
+                        img.addEventListener('click', () => {
+                            openLightbox(img.src);
+                        });
+                    }
+                });
+
+                // Close lightbox when clicking close button
+                closeLightbox.addEventListener('click', closeLightboxFunc);
+
+                // Close lightbox when clicking outside the image
+                lightbox.addEventListener('click', (e) => {
+                    if (e.target === lightbox) {
+                        closeLightboxFunc();
+                    }
+                });
+
+                // Close lightbox with ESC key
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && lightbox.style.display === 'block') {
+                        closeLightboxFunc();
+                    }
                 });
             });
-        });
-    </script>
-</section>
-    
-<section class="Facilities" id="facilities"style="padding: 100px;">
-    <div class="facilities-container">
-        <h2 style="font-family: 'Merienda'; color: #e2b15e;">Facilities Plans</h2>
-        <div class="facilities-content" style="display: flex; justify-content: space-between;">
-            <div class="facilities-descriptions" style="flex: 1;">
-                <div class="facility-description" data-facility="Outdoor-retreat">
-                    <h3>Outdoor Retreat - 8th Floor</h3>
-                    <div class="description-content">
-                        <ol type="1">
-                            <li>1. Terrace Garden</li>
-                            <li>2. Leisure Lawns</li>
-                            <li>3. The Courtyard</li>
-                        </ol>
-                    </div>
-                </div>
+            </script>
 
-                <div class="facility-description" data-facility="Collaborative-spaces">
-                    <h3>Collaborative Spaces - 38th Floor</h3>
-                    <div class="description-content">
-                        <ol type="1">
-                            <li>1. Alfresco Area</li>
-                            <li>2. Oasis Garden</li>
-                            <li>3. Garden Courtyard</li>
-                            <li>4. Canopy Corner</li>
-                            <li>5. Function Room / Co-working Space</li>
-                            <li>6. Female Changing Rooms</li>
-                            <li>7. Male Changing Rooms</li>
-                            <li>8. OKU Toilet</li>
-                            <li>9. Kids Playground</li>
-                            <li>10. Parcourse</li>
-                            <li>11. Running Track</li>
-                        </ol>
-                    </div>
-                </div>
-
-                <div class="facility-description" data-facility="Sky-High-Retreat">
-                    <h3>Sky High Retreat - 40th Floor</h3>
-                    <div class="description-content">
-                        <ol type="1">
-                            <li>1. Wading Pool</li>
-                            <li>2. Sky Pool</li>
-                            <li>3. Sunbed</li>
-                            <li>4. Swimming Deck</li>
-                            <li>5. Sky Lounge</li>
-                            <li>6. OKU Toilet</li>
-                            <li>7. Female Changing Rooms</li>
-                            <li>8. Male Changing Rooms</li>
-                            <li>9. Games Room</li>
-                            <li>10. Gymnasium</li>
-                            <li>11. BBQ Area</li>
-                            <li>12. Garden Walk</li>
-                            <li>13. Event Garden</li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
-
-            <div class="facilities-image" style="flex: 1; padding-left: 20px;">
-                <img src="outdoor-retreat.JPG" alt="Facility Image" class="active-facility-image">
-            </div>
+    <footer style="
+        background-color: #000000;
+        padding: 40px;
+        text-align: center;
+        font-family: 'Mooli', sans-serif;
+    ">
+        <img src="blacklogo.png" style="width: 10%; height: 10%;">
+        <h2 style="font-family: Merienda; color: white; padding: 5px;">The Crown Penang</h3>
+        <h3 style="font-family: Merienda; color: white; padding: 10px;">Contact us for more information & E-Brochure</h3>
+        <div class="footer-container" style="max-width: 600px; margin: 0 auto;">
+            <a href="https://wa.me/+60164771238" target="_blank" style="
+                display: inline-block;
+                background-color: #25D366;
+                color: white;
+                padding: 15px 30px;
+                text-decoration: none;
+                border-radius: 10px;
+                font-size: 18px;
+                font-weight: bold;
+                transition: transform 0.3s ease;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            ">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 10px;">
+                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.867-2.03-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.149-.173.198-.297.297-.495.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.041 1.016-1.041 2.479 1.068 2.876 1.215 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/>
+                </svg>
+                Chat with Us
+            </a>
         </div>
-    </div>
+    </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const facilityDescriptions = document.querySelectorAll('.facility-description');
-            const facilitiesImage = document.querySelector('.facilities-image img');
-        
-            // Facility Images Mapping
-            const facilityImages = {
-                'Outdoor-retreat': 'outdoor-retreat.JPG',
-                'Collaborative-spaces': 'collab.PNG',
-                'Sky-High-Retreat': 'skyhigh.PNG'
-            };
-        
-            facilityDescriptions.forEach(description => {
-                description.addEventListener('click', () => {
-                    // Close all other descriptions
-                    facilityDescriptions.forEach(desc => {
-                        if (desc !== description) {
-                            desc.classList.remove('active');
-                        }
-                    });
-        
-                    // Toggle clicked description
-                    description.classList.toggle('active');
-        
-                    // Change image based on facility
-                    const facilityType = description.getAttribute('data-facility');
-                    const newImageSrc = facilityImages[facilityType];
-        
-                    // Fade out current image
-                    facilitiesImage.classList.add('hidden');
-        
-                    // After fade out, change image and fade in
-                    setTimeout(() => {
-                        facilitiesImage.src = newImageSrc;
-                        facilitiesImage.classList.remove('hidden');
-                    }, 500);
-                });
-            });
-        });
-    </script>
-</section>
-
-
-
-<section class="gallery" style="padding-bottom: 100px;" id="gallery">
-    <div class="gallery-container">
-        <img class="gallery-image active" src="TheCrown_Sales_Kit_page-0024.jpg" alt="Image 1">
-        <img class="gallery-image" src="TheCrown_Sales_Kit_page-0025.jpg" alt="Image 2">
-        <img class="gallery-image" src="TheCrown_Sales_Kit_page-0026.jpg" alt="Image 3">
-        <img class="gallery-image" src="TheCrown_Sales_Kit_page-0027.jpg" alt="Image 4">
-        <img class="gallery-image" src="TheCrown_Sales_Kit_page-0028.jpg" alt="Image 5">
-        <img class="gallery-image" src="TheCrown_Sales_Kit_page-0029.jpg" alt="Image 6">
-        <img class="gallery-image" src="TheCrown_Sales_Kit_page-0030.jpg" alt="Image 7">
-        <img class="gallery-image" src="TheCrown_Sales_Kit_page-0031.jpg" alt="Image 8">
-        <img class="gallery-image" src="TheCrown_Sales_Kit_page-0032.jpg" alt="Image 9">
-        <img class="gallery-image" src="TheCrown_Sales_Kit_page-0033.jpg" alt="Image 10">
-        <img class="gallery-image" src="TheCrown_Sales_Kit_page-0034.jpg" alt="Image 11">
-        <img class="gallery-image" src="TheCrown_Sales_Kit_page-0035.jpg" alt="Image 12">
-        <img class="gallery-image" src="TheCrown_Sales_Kit_page-0036.jpg" alt="Image 13">
-        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
-        <button class="next" onclick="changeSlide(1)">&#10095;</button>
-    </div>
-
-    <script>
-        let currentIndex = 0;
-        const images = document.querySelectorAll('.gallery-image');
-    
-        function showSlide(index) {
-            images.forEach((img, i) => {
-                img.classList.remove('active');
-                if (i === index) {
-                    img.classList.add('active');
-                }
-            });
-        }
-    
-        function changeSlide(direction) {
-            currentIndex += direction;
-            if (currentIndex < 0) {
-                currentIndex = images.length - 1;
-            } else if (currentIndex >= images.length) {
-                currentIndex = 0;
-            }
-            showSlide(currentIndex);
-        }
-    
-        function autoSlide() {
-            currentIndex = (currentIndex + 1) % images.length;
-            showSlide(currentIndex);
-        }
-    
-        setInterval(autoSlide, 3000); // Change image every 3 seconds
-    </script>
-    
-</section>
-
-
-
-    <!-- Lightbox Container -->
-    <div id="lightbox">
-        <span id="lightbox-close">&times;</span>
-        <img id="lightbox-img" src="" alt="Lightbox image">
-    </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const lightbox = document.getElementById('lightbox');
-            const lightboxImg = document.getElementById('lightbox-img');
-            const closeLightbox = document.getElementById('lightbox-close');
-
-            // Function to open lightbox
-            function openLightbox(src) {
-                lightboxImg.src = src;
-                lightbox.style.display = 'block';
-            }
-
-            // Function to close lightbox
-            function closeLightboxFunc() {
-                lightbox.style.display = 'none';
-            }
-
-            // Add lightbox functionality to all images
-            const images = document.querySelectorAll('img');
-            images.forEach(img => {
-                // Skip images inside lightbox and menu icon
-                if (img.id !== 'lightbox-img' && !img.closest('#menu-icon')) {
-                    img.classList.add('lightbox-trigger');
-                    img.addEventListener('click', () => {
-                        openLightbox(img.src);
-                    });
-                }
-            });
-
-            // Close lightbox when clicking close button
-            closeLightbox.addEventListener('click', closeLightboxFunc);
-
-            // Close lightbox when clicking outside the image
-            lightbox.addEventListener('click', (e) => {
-                if (e.target === lightbox) {
-                    closeLightboxFunc();
-                }
-            });
-
-            // Close lightbox with ESC key
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && lightbox.style.display === 'block') {
-                    closeLightboxFunc();
-                }
-            });
-        });
-        </script>
-
-<footer style="
-    background-color: #000000;
-    padding: 40px;
-    text-align: center;
-    font-family: 'Mooli', sans-serif;
-">
-    <img src="blacklogo.PNG" style="width: 10%; height: 10%;">
-    <h2 style="font-family: Merienda; color: white; padding: 5px;">The Crown Penang</h3>
-    <h3 style="font-family: Merienda; color: white; padding: 10px;">Contact us for more information & E-Brochure</h3>
-    <div class="footer-container" style="max-width: 600px; margin: 0 auto;">
-        <a href="https://wa.me/+60164771238" target="_blank" style="
-            display: inline-block;
-            background-color: #25D366;
-            color: white;
-            padding: 15px 30px;
-            text-decoration: none;
-            border-radius: 10px;
-            font-size: 18px;
-            font-weight: bold;
-            transition: transform 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        ">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 10px;">
-                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.867-2.03-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.149-.173.198-.297.297-.495.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.041 1.016-1.041 2.479 1.068 2.876 1.215 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/>
-            </svg>
-            Chat with Us
-        </a>
-    </div>
-</footer>
-
-</body>
-</html>
+    </body>
+    </html>
